@@ -5,6 +5,11 @@ on:
     tags:
       - "[0-9]+.*"
 
+# Creating the release and uploading its assets; a fork's default token is
+# read-only.
+permissions:
+  contents: write
+
 jobs:
   create-release:
     runs-on: ubuntu-22.04
@@ -65,6 +70,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   push_crates_io:
+    # Only upstream publishes to crates.io.
+    if: github.repository == 'Wilfred/difftastic'
     runs-on: ubuntu-22.04
     steps:
       # v4.2.2

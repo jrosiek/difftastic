@@ -1,3 +1,14 @@
+> **This is a fork of [Wilfred/difftastic](https://github.com/Wilfred/difftastic).**
+> It adds one change to the JSON output (`DFT_DISPLAY=json`): words that are the same
+> on both sides of a changed comment, string or text line are no longer listed as
+> changes, so such a line lists only the words that changed, as code lines already do.
+> This also applies when difft falls back to a line-oriented diff
+> (see [#658](https://github.com/Wilfred/difftastic/issues/658)).
+>
+> Releases are upstream releases plus this change, versioned `<upstream>+jr.<n>`
+> (for example `0.71.0+jr.1`). The default branch here is `patched`; everything else
+> is upstream's.
+
 <p align="center">
   <a href="#readme"><img src="img/logo.png" alt="it's difftastic!"/></a>
   <br>
